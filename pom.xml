@@ -130,14 +130,46 @@
             </dependencies>
         </profile>
         <profile>
-            <id>mac</id>
+            <id>mac-intel</id>
             <activation>
                 <os>
                     <family>Mac</family>
+                    <arch>x86_64</arch>
                 </os>
             </activation>
             <properties>
                 <platform>macos</platform>
+            </properties>
+            <dependencies>
+                <dependency>
+                    <groupId>org.eclipse.platform</groupId>
+                    <artifactId>org.eclipse.swt.cocoa.macosx.x86_64</artifactId>
+                    <version>${swt.maven.version}</version>
+                    <exclusions>
+                        <exclusion>
+                            <groupId>org.eclipse.platform</groupId>
+                            <artifactId>org.eclipse.swt</artifactId>
+                        </exclusion>
+                    </exclusions>
+                </dependency>
+                <dependency>
+                    <groupId>org.lwjgl</groupId>
+                    <artifactId>lwjgl-vulkan</artifactId>
+                    <version>${lwjgl.version}</version>
+                    <classifier>natives-macos</classifier>
+                </dependency>
+            </dependencies>
+        </profile>
+        <profile>
+            <id>mac-arm64</id>
+            <activation>
+                <os>
+                    <family>Mac</family>
+                    <arch>aarch64</arch>
+                </os>
+            </activation>
+            <properties>
+                <platform>macos-arm64</platform>
             </properties>
             <dependencies>
                 <dependency>
