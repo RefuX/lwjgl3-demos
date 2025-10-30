@@ -156,7 +156,7 @@
                     <groupId>org.lwjgl</groupId>
                     <artifactId>lwjgl-vulkan</artifactId>
                     <version>${lwjgl.version}</version>
-                    <classifier>natives-macos</classifier>
+                    <classifier>natives-${platform}</classifier>
                 </dependency>
             </dependencies>
         </profile>
@@ -187,7 +187,7 @@
                     <groupId>org.lwjgl</groupId>
                     <artifactId>lwjgl-vulkan</artifactId>
                     <version>${lwjgl.version}</version>
-                    <classifier>natives-macos</classifier>
+                    <classifier>natives-${platform}</classifier>
                 </dependency>
             </dependencies>
         </profile>
